@@ -4,14 +4,20 @@ from manim_slides import Slide
 
 class Introduction(Slide):
     def construct(self):
-        welcome = Text("This is the Manim Slides starter")
+        text_1_1, text_1_2 = VGroup(
+            Text("Discrete Mathematics"),
+            Text('"Welcome to hell..." -Tarun Naveen'),
+        ).arrange(DOWN)
+
         square = Square(color=BLUE)
         dot = Dot(color=RED).shift(RIGHT + UP)
 
-        self.play(FadeIn(welcome))
+        self.next_slide()
+        self.play(FadeIn(text_1_1))
+        self.play(FadeIn(text_1_2))
         self.next_slide()
 
-        self.wipe(welcome, square)
+        self.wipe(text_1_1, square)
         self.play(FadeIn(dot))
 
         self.next_slide(loop=True)
