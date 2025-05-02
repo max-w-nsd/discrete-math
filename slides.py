@@ -5,14 +5,13 @@ from manim_slides import Slide
 class Introduction(Slide):
     def construct(self):
         text_1_1, text_1_2 = VGroup(
-            Text("Discrete Mathematics"),
-            Text('"Welcome to hell..." -Tarun Naveen'),
+            Text("Discrete Mathematics", font_size=72),
+            Text('"Welcome to hell..." -Tarun Naveen', color=GRAY),
         ).arrange(DOWN)
 
         square = Square(color=BLUE)
         dot = Dot(color=RED).shift(RIGHT + UP)
 
-        self.next_slide()
         self.play(FadeIn(text_1_1))
         self.play(FadeIn(text_1_2))
         self.next_slide()
