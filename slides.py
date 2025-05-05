@@ -29,7 +29,7 @@ class Introduction(Slide):
 class WithTeX(Slide):
     def construct(self):
         tex, text = VGroup(
-            Tex(r"{n\choose k}"),
+            MathTex(r"\binom{n}{k} = \frac{n!}{k!(n-k)!}"),
             Text("which does not render like plain text"),
         ).arrange(DOWN)
 
