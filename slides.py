@@ -14,9 +14,11 @@ class Introduction(Slide):
 
         self.play(FadeIn(text_1_1))
         self.play(FadeIn(text_1_2))
-        self.next_slide()
+        self.next_slide(notes='testing out notes AAAAAAAAAAAAH')
 
-        self.wipe(text_1_1, square)
+        # TODO: try out Group or VGroup instead of list?
+        # TODO: try out not including a group
+        self.wipe([text_1_1, text_1_2], square)
         self.play(FadeIn(dot))
 
         self.next_slide(loop=True)
@@ -27,7 +29,7 @@ class Introduction(Slide):
 class WithTeX(Slide):
     def construct(self):
         tex, text = VGroup(
-            Tex(r"You can also use \TeX, e.g., $\cos\theta=1$"),
+            Tex(r"\binom{n}{k}"),
             Text("which does not render like plain text"),
         ).arrange(DOWN)
 
