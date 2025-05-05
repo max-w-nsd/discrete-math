@@ -29,7 +29,7 @@ class Introduction(Slide):
 class WithTeX(Slide):
     def construct(self):
         tex, text = VGroup(
-            Tex(r"\binom{n}{k}"),
+            Tex(r"{n\choose k}"),
             Text("which does not render like plain text"),
         ).arrange(DOWN)
 
