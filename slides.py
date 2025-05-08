@@ -28,13 +28,15 @@ class Introduction(Slide):
         text_3_1 = Text("Tuesday - Counting")
         text_3_2 = Text("How many apples are there?")
 
+        apples = Group(*[ImageMobject("SnapdragonNEW.webp") for _ in range(5)]).arrange(RIGHT)
+
         text_3_1.to_corner(UL)
         text_3_2.to_edge(DOWN)
 
         # TODO: try out Group or VGroup instead of list?
         self.wipe([text_1_1, text_2_1, text_2_2])
         self.play(Write(text_3_1))
-        # TODO: DRAW APPLES
+        self.play(Create(apples))
         self.play(Write(text_3_2))
 
         # self.next_slide(loop=True)
