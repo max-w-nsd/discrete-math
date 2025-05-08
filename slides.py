@@ -28,7 +28,13 @@ class Introduction(Slide):
         text_3_1 = Text("Tuesday - Counting")
         text_3_2 = Text("How many apples are there?")
 
-        apples = Group(*[ImageMobject("SnapdragonNEW.webp") for _ in range(5)]).arrange(RIGHT)
+        a1 = ImageMobject("SnapdragonNEW.webp")
+        a1.height = 1
+        a2 = a1.copy()
+        a3 = a1.copy()
+        a4 = a1.copy()
+        a5 = a1.copy()
+        apples_1 = Group(a1, a2, a3, a4, a5).arrange(RIGHT)
 
         text_3_1.to_corner(UL)
         text_3_2.to_edge(DOWN)
