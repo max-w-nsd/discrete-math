@@ -19,9 +19,11 @@ class Introduction(Slide):
         text_2_1 = Text("What is")
         text_2_2 = Text("Discrete Mathematics?", font_size=72)
 
-        self.play(FadeOut(text_1_2, shift=DOWN), VGroup(text_1_1, text_2_1).animate.arrange(UP))
+        # self.play(FadeOut(text_1_2, shift=DOWN), VGroup(text_1_1, text_2_1).animate.arrange(UP))
+        self.play(FadeOut(text_1_2, shift=DOWN), text_1_1.animate.shift(DOWN * 0.5))
+        text_2_2.move_to(text_1_1)
         self.play(Write(text_2_1))
-        self.play(ReplacementTransform(text_1_1, text_2_2))
+        self.play(TransformMatchingShapes(text_1_1, text_2_2))
 
         self.next_slide("boom bam")
         # TODO: try out Group or VGroup instead of list?
