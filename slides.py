@@ -35,6 +35,7 @@ class Introduction(Slide):
         a4 = a1.copy()
         a5 = a1.copy()
         apples_1 = Group(a1, a2, a3, a4, a5).arrange(RIGHT)
+        apples_2 = Group(apples_1, apples_1.copy()).arrange(DOWN)
 
         text_3_1.to_corner(UL)
         text_3_2.to_edge(DOWN)
@@ -42,7 +43,7 @@ class Introduction(Slide):
         # TODO: try out Group or VGroup instead of list?
         self.wipe([text_1_1, text_2_1, text_2_2])
         self.play(Write(text_3_1))
-        self.play(FadeIn(apples_1))
+        self.play(FadeIn(apples_2, lag_ratio=0.1))
         self.play(Write(text_3_2))
 
         # self.next_slide(loop=True)
