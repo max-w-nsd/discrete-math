@@ -36,7 +36,7 @@ class Introduction(Slide):
         # TODO: try out Group or VGroup instead of list?
         self.wipe([text_1_1, text_2_1, text_2_2])
         self.play(Write(text_3_1))
-        self.play(Create(apples))
+        self.play(FadeIn(apples))
         self.play(Write(text_3_2))
 
         # self.next_slide(loop=True)
