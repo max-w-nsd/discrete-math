@@ -17,17 +17,17 @@ class Introduction(Slide):
         self.next_slide()
 
         text_2_1 = Text("What is")
-        text_2_2 = Text("Discrete Mathematics?", font_size=72)
+        text_2_2 = Text("?", font_size=72)
 
-        text_2_1.align_to(text_1_2, UP)
+        text_2_1.next_to(text_1_2, UP)
 
         # self.play(FadeOut(text_1_2, shift=DOWN), VGroup(text_1_1, text_2_1).animate.arrange(UP))
         self.play(FadeOut(text_1_2, shift=DOWN), text_1_1.animate.shift(DOWN))
-        text_2_2.move_to(text_1_1)
+        text_2_2.next_to(text_1_1, RIGHT)
         self.play(Write(text_2_1))
-        self.play(Transform(text_1_1, text_2_2))
+        self.play(Write(text_2_2))
 
-        self.next_slide("boom bam")
+        self.next_slide()
         # TODO: try out Group or VGroup instead of list?
         # TODO: try out not including a group
         # self.wipe([text_1_1, text_1_2], square)
