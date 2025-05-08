@@ -9,9 +9,6 @@ class Introduction(Slide):
             Text('"Welcome to hell..." -Tarun Naveen', color=GRAY),
         ).arrange(DOWN)
 
-        square = Square(color=BLUE)
-        dot = Dot(color=RED).shift(RIGHT + UP)
-
         self.play(FadeIn(text_1_1))
         self.play(FadeIn(text_1_2))
         self.next_slide()
@@ -21,17 +18,24 @@ class Introduction(Slide):
 
         text_2_1.next_to(text_1_2, UP)
 
-        # self.play(FadeOut(text_1_2, shift=DOWN), VGroup(text_1_1, text_2_1).animate.arrange(UP))
         self.play(FadeOut(text_1_2, shift=DOWN), text_1_1.animate.shift(DOWN))
         text_2_2.next_to(text_1_1, RIGHT)
         self.play(Write(text_2_1))
         self.play(Write(text_2_2))
 
         self.next_slide()
+
+        text_3_1 = Text("Tuesday - Counting")
+        text_3_2 = Text("How many apples are there?")
+
+        text_3_1.to_corner(UL)
+        text_3_2.to_edge(DOWN)
+
         # TODO: try out Group or VGroup instead of list?
-        # TODO: try out not including a group
-        # self.wipe([text_1_1, text_1_2], square)
-        self.play(FadeIn(dot))
+        self.wipe([text_1_1, text_2_1, text_2_2])
+        self.play(Write(text_3_1))
+        # TODO: DRAW APPLES
+        self.play(Write(text_3_2))
 
         # self.next_slide(loop=True)
         # self.play(
