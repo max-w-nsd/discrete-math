@@ -14,17 +14,25 @@ class Introduction(Slide):
 
         self.play(FadeIn(text_1_1))
         self.play(FadeIn(text_1_2))
-        self.next_slide(notes='testing out notes AAAAAAAAAAAAH')
+        self.next_slide(name='I wonder if this name appears anywhere!')
 
+        text_2_1 = Text("What is")
+        text_2_2 = Text("Discrete Mathematics?", font_size=72)
+
+        self.play(FadeOut(text_1_2, shift=DOWN), text_1_1.animate.shift(DOWN))
+        self.play(Write(text_2_1))
+        self.play(ReplacementTransform(text_1_1, text_2_1))
+
+        self.next_slide("boom bam")
         # TODO: try out Group or VGroup instead of list?
         # TODO: try out not including a group
-        self.wipe([text_1_1, text_1_2], square)
+        # self.wipe([text_1_1, text_1_2], square)
         self.play(FadeIn(dot))
 
-        self.next_slide(loop=True)
-        self.play(
-            MoveAlongPath(dot, square, rate_func=linear), run_time=2
-        )
+        # self.next_slide(loop=True)
+        # self.play(
+        #     MoveAlongPath(dot, square, rate_func=linear), run_time=2
+        # )
 
 class WithTeX(Slide):
     def construct(self):
