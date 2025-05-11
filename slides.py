@@ -2,7 +2,7 @@ from manim import *
 from manim_slides import Slide
 
 
-class Introduction(Slide):
+class Lesson1(Slide):
     def construct(self):
         text_1_1, text_1_2 = VGroup(
             Text("Discrete Mathematics", font_size=72),
@@ -25,7 +25,7 @@ class Introduction(Slide):
 
         self.next_slide()
 
-        text_3_1 = Text("Tuesday - Counting")
+        text_3_1 = Text("Lesson 1: Counting")
         text_3_2 = Text("How many apples are there?")
 
         a1 = ImageMobject("SnapdragonNEW.webp")
@@ -46,22 +46,13 @@ class Introduction(Slide):
         self.play(FadeIn(apples_2, lag_ratio=0.1))
         self.play(Write(text_3_2))
 
-        # self.next_slide(loop=True)
-        # self.play(
-        #     MoveAlongPath(dot, square, rate_func=linear), run_time=2
-        # )
 
 class WithTeX(Slide):
     def construct(self):
-        tex, text = VGroup(
-            MathTex(r"\binom{n}{k} = \frac{n!}{k!(n-k)!}"),
-            Text("which does not render like plain text"),
-        ).arrange(DOWN)
+        tex = MathTex(r"\binom{n}{k} = \frac{n!}{k!(n-k)!}")
 
         self.play(FadeIn(tex))
         self.next_slide()
-
-        self.play(FadeIn(text, shift=DOWN))
 
 
 class Outro(Slide):
