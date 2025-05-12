@@ -77,10 +77,10 @@ class Lesson1(Slide):
         self.next_slide()
 
         lines = VGroup()
-        for i in range(-3, 4, 1.5):
-            lines.add(Line(i * RIGHT + 3 * UP, i * RIGHT + 3 * DOWN))
-        for i in range(-3, 4, 1.5):
-            lines.add(Line(i * DOWN + 3 * LEFT, i * DOWN + 3 * RIGHT))
+        for i in range(-6, 7, 3):
+            lines.add(Line(i / 2 * RIGHT + 3 * UP, i / 2 * RIGHT + 3 * DOWN))
+        for i in range(-6, 7, 3):
+            lines.add(Line(i / 2 * DOWN + 3 * LEFT, i / 2 * DOWN + 3 * RIGHT))
         
         # squares = VGroup()
         # for i in range(4):
