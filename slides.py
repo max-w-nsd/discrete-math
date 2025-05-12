@@ -90,9 +90,16 @@ class Lesson1(Slide):
                 s.align_to(lines[j + 4], UP)
                 squares.add(s)
 
+        rook = SVGMobject("Chess_rlt45.svg", height=1.5)
+        rook.align_to(lines[0], LEFT)
+        rook.align_to(lines[4], UP)
+
         self.wipe([text_3_1, text_3_2, apples_2])
         self.play(Create(lines, lag_ratio=0.1))
         self.play(FadeIn(squares, lag_ratio=0.1))
+        self.play(FadeIn(rook))
+
+        self.next_slide()
 
 
 
