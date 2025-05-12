@@ -78,9 +78,9 @@ class Lesson1(Slide):
 
         lines = VGroup()
         for i in range(-2, 3):
-            lines.add(i * RIGHT + 2 * UP, i * RIGHT + 2 * DOWN)
+            lines.add(Line(i * RIGHT + 2 * UP, i * RIGHT + 2 * DOWN))
         for i in range(-2, 3):
-            lines.add(i * DOWN + 2 * LEFT, i * DOWN + 2 * RIGHT)
+            lines.add(Line(i * DOWN + 2 * LEFT, i * DOWN + 2 * RIGHT))
 
         self.wipe([text_3_1, text_3_2, apples_2])
         self.play(Create(lines, lag_ratio=0.1))
