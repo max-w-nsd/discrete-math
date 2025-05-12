@@ -82,12 +82,17 @@ class Lesson1(Slide):
         for i in range(-6, 7, 3):
             lines.add(Line(i / 2 * DOWN + 3 * LEFT, i / 2 * DOWN + 3 * RIGHT))
         
-        # squares = VGroup()
-        # for i in range(4):
-        #     for j in range(4):
+        squares = VGroup()
+        for i in range(4):
+            for j in range(4):
+                s = Square(1.5, fill_color=BLUE)
+                s.align_to(lines[i], LEFT)
+                s.align_to(lines[i + 4], UP)
+                squares.add(s)
 
         self.wipe([text_3_1, text_3_2, apples_2])
         self.play(Create(lines, lag_ratio=0.1))
+        self.play(FadeIn(squares, lag_ratio=0.1))
 
 
 
