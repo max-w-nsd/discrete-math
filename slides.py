@@ -40,11 +40,35 @@ class Lesson1(Slide):
         text_3_1.to_corner(UL)
         text_3_2.to_edge(DOWN)
 
-        # TODO: try out Group or VGroup instead of list?
+        # try out Group or VGroup instead of list?
         self.wipe([text_1_1, text_2_1, text_2_2])
         self.play(Write(text_3_1))
         self.play(FadeIn(apples_2, lag_ratio=0.1))
         self.play(Write(text_3_2))
+
+        self.next_slide()
+        
+        text_4_1, text_4_2, text_4_3 = VGroup(
+            Text("14 donuts"),
+            Text("16 hotdogs"),
+            Text("How many options are there?"),
+        ).arrange(DOWN)
+
+        self.wipe([text_3_1, text_3_2, apples_1, apples_2])
+        self.play(Write(text_4_1), Write(text_4_2), Write(text_4_3))
+
+        self.next_slide()
+
+        text_5_1 = MathTex("14+16=30", font_size=72)
+        text_5_1.next_to(text_4_2, DOWN)
+
+        self.play(Transform(text_4_3, text_5_1))
+
+
+        
+
+
+
 
 
 class WithTeX(Slide):
