@@ -85,7 +85,8 @@ class Lesson1(Slide):
         squares = VGroup()
         for i in range(4):
             for j in range(4):
-                s = Square(1.5, fill_color=BLUE)
+                s = Square(1.5)
+                s.set_fill(GRAY_B, 1)
                 s.align_to(lines[i], LEFT)
                 s.align_to(lines[j + 4], UP)
                 squares.add(s)
