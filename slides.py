@@ -54,7 +54,7 @@ class Lesson1(Slide):
             Text("How many options are there?"),
         ).arrange(DOWN)
 
-        self.wipe([text_3_1, text_3_2, apples_1, apples_2])
+        self.wipe([text_3_1, text_3_2, apples_2])
         self.play(Write(text_4_1), Write(text_4_2), Write(text_4_3))
 
         self.next_slide()
@@ -63,6 +63,17 @@ class Lesson1(Slide):
         text_5_1.next_to(text_4_2, DOWN)
 
         self.play(Transform(text_4_3, text_5_1))
+
+        self.next_slide()
+
+        group_6 = VGroup(
+            Text("Additive principle"),
+            MathTex("A or B = A + B", font_size=72),
+        ).arrange(DOWN)
+
+        self.wipe([text_4_1, text_4_2, text_5_1], group_6)
+
+
 
 
         
