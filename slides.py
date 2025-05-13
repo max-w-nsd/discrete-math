@@ -214,3 +214,15 @@ class Lesson2(Slide):
         self.next_slide()
 
         self.play(text_3.animate.to_corner(UR))
+
+        # self.next_slide()
+
+        # text_4 = Tex(r"Fun fact: a $\Delta^k$-constant sequence can be represented as a $k$-degree polynomial")
+
+        self.wipe(text_3)
+
+class Problems1(Slide):
+    def construct(self):
+        img_1 = ImageMobject("Screenshot 1.png")
+        
+        self.play(FadeIn(img_1))
