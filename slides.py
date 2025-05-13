@@ -90,7 +90,7 @@ class Lesson1(Slide):
             for j in range(4):
                 s = Square(1.5)
                 if (i + j) % 2 == 1:
-                    s.set_fill(GRAY_D, 1)
+                    s.set_fill(GRAY_E, 1)
                 s.align_to(lines[i], LEFT)
                 s.align_to(lines[j + 5], UP)
                 squares.add(s)
@@ -101,7 +101,7 @@ class Lesson1(Slide):
         rook = SVGMobject("Chess_rlt45.svg", height=1)
         rook.move_to(squares[0])
 
-        text_1 = Text("How many shortest paths are there to each square?")
+        text_1 = Text("How many shortest\npaths are there to\neach square?", font_size=36)
         text_1.to_edge(LEFT)
 
         self.wipe([text_3_1, text_3_2, apples_2])
@@ -111,7 +111,11 @@ class Lesson1(Slide):
 
         self.next_slide()
 
+        numbers.remove(numbers[10])
+        numbers.remove(numbers[0])
+
         self.play(Write(numbers, lag_ratio=0.1))
+        
 
 
 
