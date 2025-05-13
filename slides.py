@@ -157,7 +157,7 @@ class Lesson1(Slide):
                 s.align_to(lines[i], LEFT)
                 s.align_to(lines[j + 9], UP)
                 squares.add(s)
-                n = MathTex(str(comb(i + j, j)))
+                n = MathTex(str(comb(i + j, j)), font_size=36)
                 n.move_to(s)
                 numbers.add(n)
         
@@ -172,3 +172,10 @@ class Lesson1(Slide):
         self.next_slide()
 
         self.play(Write(numbers, lag_ratio=0.1))
+
+        self.next_slide()
+
+        text_6 = Text("How many ways can you distribute\n7 cookies to 4 kids?")
+        text_6.to_edge(UP)
+
+        self.wipe([lines, squares, numbers, rook], text_6)
