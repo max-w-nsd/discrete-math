@@ -224,24 +224,24 @@ class Lesson2(Slide):
 class Problems1(Slide):
     def construct(self):
         img_1 = ImageMobject("Screenshot 1.png")
-        img_1.scale(2)
+        img_1.scale(1.5)
 
         self.play(FadeIn(img_1))
-        # self.next_slide()
+        self.next_slide()
 
-        # img_2 = ImageMobject("Screenshot 2.png")
-        # img_2.scale(3)
+        img_2 = ImageMobject("Screenshot 2.png")
+        img_2.scale(3)
 
-        # self.wipe(img_1, img_2)
-        # self.next_slide()
+        self.wipe(img_1, img_2)
+        self.next_slide()
 
-        # img_4 = ImageMobject("Screenshot 4.png")
-        # img_4.scale(3)
+        img_4 = ImageMobject("Screenshot 4.png")
+        img_4.scale(3)
 
-        # self.wipe(img_2, img_4)
-        # self.next_slide()
+        self.wipe(img_2, img_4)
+        self.next_slide()
 
-        # img_3 = ImageMobject("Screenshot 3.png")
-        # img_3.scale(3)
+        img_3 = ImageMobject("Screenshot 3.png")
+        img_3.scale(3)
 
-        # self.wipe(img_4, img_3)
+        self.wipe(img_4, img_3)
