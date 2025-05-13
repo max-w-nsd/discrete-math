@@ -81,12 +81,14 @@ class Lesson1(Slide):
             lines.add(Line(i / 2 * RIGHT + 3 * UP, i / 2 * RIGHT + 3 * DOWN))
         for i in range(-6, 7, 3):
             lines.add(Line(i / 2 * DOWN + 3 * LEFT, i / 2 * DOWN + 3 * RIGHT))
+        lines.shift(RIGHT * 2)
         
         squares = VGroup()
         for i in range(4):
             for j in range(4):
                 s = Square(1.5)
-                s.set_fill(GRAY_D, 1)
+                if (i + j) % 2 == 1:
+                    s.set_fill(GRAY_D, 1)
                 s.align_to(lines[i], LEFT)
                 s.align_to(lines[j + 5], UP)
                 squares.add(s)
@@ -96,13 +98,17 @@ class Lesson1(Slide):
 
         text_1 = Text("How many shortest paths are there to each square?")
         text_1.to_edge(LEFT)
+        text_2 = MathTex("6")
+        text_2.move_to(squares[10])
 
         self.wipe([text_3_1, text_3_2, apples_2])
         self.play(Create(lines, lag_ratio=0.1))
         self.play(FadeIn(squares, lag_ratio=0.1))
-        self.play(FadeIn(rook), Write(text_1))
+        self.play(FadeIn(rook), Write(text_1), Write(text_2))
 
         self.next_slide()
+
+
 
 
 class WithTeX(Slide):
