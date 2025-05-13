@@ -86,22 +86,23 @@ class Lesson1(Slide):
         for i in range(4):
             for j in range(4):
                 s = Square(1.5)
-                s.set_fill(GRAY_B, 1)
+                s.set_fill(GRAY_D, 1)
                 s.align_to(lines[i], LEFT)
-                s.align_to(lines[j + 4], UP)
+                s.align_to(lines[j + 5], UP)
                 squares.add(s)
 
-        rook = SVGMobject("Chess_rlt45.svg", height=1.5)
-        rook.align_to(lines[0], LEFT)
-        rook.align_to(lines[4], UP)
+        rook = SVGMobject("Chess_rlt45.svg", height=1)
+        rook.move_to(squares[0])
+
+        text_1 = Text("How many shortest paths are there to each square?")
+        text_1.to_edge(LEFT)
 
         self.wipe([text_3_1, text_3_2, apples_2])
         self.play(Create(lines, lag_ratio=0.1))
         self.play(FadeIn(squares, lag_ratio=0.1))
-        self.play(FadeIn(rook))
+        self.play(FadeIn(rook), Write(text_1))
 
         self.next_slide()
-
 
 
 class WithTeX(Slide):
