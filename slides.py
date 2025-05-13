@@ -132,7 +132,7 @@ class Lesson1(Slide):
         text_4 = Text("With 6 pizza toppings, how many combinations of two toppings can be made?")
         text_4.to_edge(UP)
 
-        self.wipe([text_2, text_3], text_4, UP)
+        self.wipe([text_2, text_3], text_4, direction=UP)
 
         self.next_slide()
 
