@@ -112,9 +112,8 @@ class Lesson1(Slide):
         self.next_slide()
 
         n1 = numbers[10]
-        n2 = numbers[0]
         numbers.remove(n1)
-        numbers.remove(n2)
+        numbers.remove(numbers[0])
 
         self.play(Write(numbers, lag_ratio=0.1))
 
@@ -124,12 +123,12 @@ class Lesson1(Slide):
         text_2.to_edge(UP)
         text_3 = MathTex(r"\binom{n}{k} = \frac{n!}{k!(n-k)!}", font_size=72)
 
-        self.wipe([lines, squares, numbers, n1, n2, text_1, rook], text_2)
+        self.wipe([lines, squares, numbers, n1, text_1, rook], text_2)
         self.play(Write(text_3))
 
         self.next_slide()
 
-        text_4 = Text("With 6 pizza toppings, how many combinations of two toppings can be made?")
+        text_4 = Text("With 6 pizza toppings, how many\ncombinations of two unique toppings\ncan be made?")
         text_4.to_edge(UP)
 
         self.wipe([text_2, text_3], text_4, direction=UP)
@@ -140,12 +139,36 @@ class Lesson1(Slide):
 
         self.play(Write(text_5))
 
+        self.next_slide()
 
-class Outro(Slide):
-    def construct(self):
-        learn_more = VGroup(
-            Text("Learn more about Manim Slides:"),
-            Text("https://manim-slides.eertmans.be"),
-        ).arrange(DOWN)
+        lines = VGroup()
+        for i in range(-4, 5):
+            lines.add(Line(i * 0.75 * RIGHT + 3 * UP, i * 0.75 * RIGHT + 3 * DOWN))
+        for i in range(-4, 5):
+            lines.add(Line(i * 0.75 * DOWN + 3 * LEFT, i * 0.75 * DOWN + 3 * RIGHT))
+        
+        squares = VGroup()
+        numbers = VGroup()
+        for i in range(8):
+            for j in range(8):
+                s = Square(0.75)
+                if (i + j) % 2 == 1:
+                    s.set_fill(GRAY_E, 1)
+                s.align_to(lines[i], LEFT)
+                s.align_to(lines[j + 9], UP)
+                squares.add(s)
+                n = MathTex(str(comb(i + j, j)))
+                n.move_to(s)
+                numbers.add(n)
+        
+        rook = SVGMobject("Chess_rlt45.svg", height=0.5)
+        rook.move_to(squares[0])
 
-        self.play(FadeIn(learn_more))
+        self.wipe([text_4, text_5])
+        self.play(Create(lines, lag_ratio=0.1))
+        self.play(FadeIn(squares, lag_ratio=0.1))
+        self.play(FadeIn(rook))
+
+        self.next_slide()
+
+        self.play(Write(numbers, lag_ratio=0.1))
