@@ -215,7 +215,7 @@ class Lesson2(Slide):
 
         self.play(text_3.animate.to_corner(UR))
 
-        # self.next_slide()
+        self.next_slide()
 
         # text_4 = Tex(r"Fun fact: a $\Delta^k$-constant sequence can be represented as a $k$-degree polynomial")
 
