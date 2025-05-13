@@ -160,6 +160,8 @@ class Lesson1(Slide):
                 n = MathTex(str(comb(i + j, j)), font_size=36)
                 n.move_to(s)
                 numbers.add(n)
+
+        numbers.remove(numbers[0])
         
         rook = SVGMobject("Chess_rlt45.svg", height=0.5)
         rook.move_to(squares[0])
@@ -179,3 +181,13 @@ class Lesson1(Slide):
         text_6.to_edge(UP)
 
         self.wipe([lines, squares, numbers, rook], text_6)
+
+        self.next_slide()
+
+        text_5 = MathTex(r"\binom{10}{3} = 120", font_size=72)
+
+        self.play(Write(text_5))
+
+        self.next_slide()
+
+        self.wipe([text_6, text_5])
