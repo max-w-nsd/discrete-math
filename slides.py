@@ -111,21 +111,34 @@ class Lesson1(Slide):
 
         self.next_slide()
 
-        numbers.remove(numbers[10])
-        numbers.remove(numbers[0])
+        n1 = numbers[10]
+        n2 = numbers[0]
+        numbers.remove(n1)
+        numbers.remove(n2)
 
         self.play(Write(numbers, lag_ratio=0.1))
-        
 
-
-
-
-class WithTeX(Slide):
-    def construct(self):
-        tex = MathTex(r"\binom{n}{k} = \frac{n!}{k!(n-k)!}")
-
-        self.play(FadeIn(tex))
         self.next_slide()
+
+        text_2 = Text("Binomial Coefficient")
+        text_2.to_edge(UP)
+        text_3 = MathTex(r"\binom{n}{k} = \frac{n!}{k!(n-k)!}", font_size=72)
+
+        self.wipe([lines, squares, numbers, n1, n2, text_1, rook], text_2)
+        self.play(Write(text_3))
+
+        self.next_slide()
+
+        text_4 = Text("With 6 pizza toppings, how many combinations of two toppings can be made?")
+        text_4.to_edge(UP)
+
+        self.wipe([text_2, text_3], text_4, UP)
+
+        self.next_slide()
+
+        text_5 = MathTex(r"\binom{6}{2} = 15", font_size=72)
+
+        self.play(Write(text_5))
 
 
 class Outro(Slide):
