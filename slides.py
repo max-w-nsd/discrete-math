@@ -191,3 +191,26 @@ class Lesson1(Slide):
         self.next_slide()
 
         self.wipe([text_6, text_5])
+
+class Lesson2(Slide):
+    def construct(self):
+        text_1 = Text("Lesson 2: Sequences")
+        text_1.to_corner(UL)
+        text_2 = MathTex("2, 3, 6, 12, 22, 37, 58, ...", font_size=60)
+
+        self.play(Write(text_1))
+        self.play(Write(text_2))
+
+        self.next_slide()
+
+        self.play(text_2.animate.shift(UP))
+
+        self.next_slide()
+
+        text_3 = MathTex(r"\Delta^k\text{-constant}", font_size=72)
+
+        self.wipe([text_1, text_2], text_3)
+
+        self.next_slide()
+
+        self.play(text_3.animate.to_corner(UR))
