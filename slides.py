@@ -223,6 +223,12 @@ class Lesson2(Slide):
 
 class Problems1(Slide):
     def construct(self):
-        img_1 = ImageMobject("Screenshot 1.png")
-        
+        img_1 = ImageMobject("Screenshot 1.png", scale_to_resolution=2160)
+
         self.play(FadeIn(img_1))
+
+        self.next_slide()
+
+        img_2 = ImageMobject("Screenshot 2.png", height=6)
+
+        self.play(FadeIn(img_2))
