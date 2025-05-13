@@ -229,6 +229,13 @@ class Problems1(Slide):
 
         self.next_slide()
 
-        img_2 = ImageMobject("Screenshot 2.png", height=6)
+        img_2 = ImageMobject("Screenshot 2.png")
+        img_2.scale(3)
 
         self.play(FadeIn(img_2))
+
+        self.next_slide()
+
+        img_3 = ImageMobject("Screenshot 3.png")
+
+        self.play(FadeIn(img_3))
